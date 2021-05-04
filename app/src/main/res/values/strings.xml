@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ElvisAI</string>
+    <string name="elvisai">ElvisAI</string>
+    <string name="welcome_to">Dobrodosli u</string>
+    <string name="button">Pronađi pjesmu</string>
+    <string name="glazba_bez_promid_be">Glazba bez promidžbe</string>
 </resources>
