@@ -4,4 +4,6 @@
     <string name="welcome_to">Dobrodosli u</string>
     <string name="button">Pronađi pjesmu</string>
     <string name="glazba_bez_promid_be">Glazba bez promidžbe</string>
+    <string name="naziv_pjesme_stringbuilder">Naziv pjesme - Izvođač<br/>Album - Godina</string>
+    <string name="pronadi_novu_pjesmu">Pronađi novu pjesmu</string>
 </resources>
