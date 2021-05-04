@@ -6,4 +6,16 @@
     <string name="glazba_bez_promid_be">Glazba bez promidžbe</string>
     <string name="naziv_pjesme_stringbuilder">Naziv pjesme - Izvođač<br/>Album - Godina</string>
     <string name="pronadi_novu_pjesmu">Pronađi novu pjesmu</string>
+    <string name="nz_pjesme_plain">Naziv pjesme:</string>
+    <string name="izvodac_plain">Izvođač:</string>
+    <string name="album_plain">Album:</string>
+    <string name="godina_plain">Godina:</string>
+    <string name="pjesma_recomm">pjesma</string>
+    <string name="izvodac_recomm">izvođač</string>
+    <string name="album_recomm">album</string>
+    <string name="godina_recomm">godina</string>
+    <string name="spotify_link">Spotify link</string>
+    <string name="render_next_song">Render next song</string>
+    <string name="youtube_link">Youtube link</string>
+    <string name="deezer_link">Deezer link</string>
 </resources>
