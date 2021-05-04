@@ -24,6 +24,22 @@ public class MainActivity extends AppCompatActivity {
         activity_main_flag = 0;
     }
 
+    public void findNewSong(View view) {
+        //This happens when you try to find new songs
+    }
+
+    public void spotifyRedirect(View view) {
+        //This happens when you try to open spotify link
+    }
+
+    public void youtubeRedirect(View view) {
+        //This happens when you try to open youtube link
+    }
+
+    public void deezerRedirect(View view) {
+        //Who the hell uses Deezer??
+    }
+
     @Override
     public void onBackPressed(){
         if(activity_main_flag==0){
@@ -32,7 +48,5 @@ public class MainActivity extends AppCompatActivity {
         } else{
             finish();
         }
-
-
     }
 }
