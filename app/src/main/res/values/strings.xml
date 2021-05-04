@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ElvisAI</string>
     <string name="elvisai">ElvisAI</string>
-    <string name="welcome_to">Dobrodosli u</string>
+    <string name="welcome_to">Dobrodošli u</string>
     <string name="button">Pronađi pjesmu</string>
     <string name="glazba_bez_promid_be">Glazba bez promidžbe</string>
     <string name="naziv_pjesme_stringbuilder">Naziv pjesme - Izvođač<br/>Album - Godina</string>
@@ -18,4 +18,5 @@
     <string name="render_next_song">Render next song</string>
     <string name="youtube_link">Youtube link</string>
     <string name="deezer_link">Deezer link</string>
+    <string name="profile_calib">Napravi profil</string>
 </resources>
