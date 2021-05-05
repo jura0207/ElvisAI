@@ -138,8 +138,10 @@ public class Spotee {
 
                 SpoteeRecommendation recommended_track = new SpoteeRecommendation();
 
+                recommended_track.setName(i.getAsJsonObject().get("name").toString().replace("\"",""));
                 recommended_track.setAlbum_name(i.getAsJsonObject().get("album").getAsJsonObject().get("name").toString().replace("\"",""));
                 recommended_track.setAlbum_id(i.getAsJsonObject().get("album").getAsJsonObject().get("id").toString().replace("\"",""));
+                recommended_track.setRelease_date(i.getAsJsonObject().get("album").getAsJsonObject().get("release_date").toString().replace("\"",""));
                 recommended_track.setCover_art_link(i.getAsJsonObject().get("album").getAsJsonObject().get("images").getAsJsonArray()
                         .get(0).getAsJsonObject().get("url").toString().replace("\"",""));
                 recommended_track.setTrack_id(i.getAsJsonObject().get("id").toString().replace("\"",""));
@@ -155,6 +157,7 @@ public class Spotee {
                     artist.setArtist_name(j.getAsJsonObject().get("name").toString().replace("\"",""));
                     artists.add(artist);
                 }
+                recommended_track.setArtists(artists);
                 allRecommendations.add(recommended_track);
             }
         }

@@ -19,10 +19,10 @@
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.205"
+            app:layout_constraintHorizontal_bias="0.115"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.575"
+            app:layout_constraintVertical_bias="0.774"
             app:srcCompat="@drawable/spotify_logo" />
 
         <ImageButton
@@ -35,10 +35,10 @@
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.466"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.573"
+            app:layout_constraintVertical_bias="0.776"
             app:srcCompat="@drawable/youtube_logo" />
 
         <ImageButton
@@ -51,10 +51,10 @@
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.757"
+            app:layout_constraintHorizontal_bias="0.807"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.574"
+            app:layout_constraintVertical_bias="0.777"
             app:srcCompat="@drawable/deezer_logo" />
 
         <TextView
@@ -66,10 +66,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.186"
+            app:layout_constraintHorizontal_bias="0.215"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.772" />
+            app:layout_constraintVertical_bias="0.906" />
 
         <ImageButton
             android:id="@+id/imageButton6"
@@ -79,10 +79,10 @@
             android:onClick="findNewSong"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.744"
+            app:layout_constraintHorizontal_bias="0.797"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.797"
+            app:layout_constraintVertical_bias="0.94"
             app:srcCompat="@android:drawable/ic_media_next" />
 
         <TextView
@@ -145,11 +145,14 @@
             android:id="@+id/textView13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="20"
+            android:maxLines="1"
             android:text="@string/pjesma_recomm"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.543"
+            app:layout_constraintHorizontal_bias="0.759"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.093" />
@@ -158,40 +161,65 @@
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="20"
+            android:maxLines="1"
             android:text="@string/izvodac_recomm"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.55"
+            app:layout_constraintHorizontal_bias="0.767"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.157" />
 
         <TextView
             android:id="@+id/textView15"
-            android:layout_width="52dp"
-            android:layout_height="23dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="20"
+            android:maxLines="1"
             android:text="@string/album_recomm"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.537"
+            app:layout_constraintHorizontal_bias="0.764"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.215" />
+            app:layout_constraintVertical_bias="0.213" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="20"
+            android:maxLines="1"
             android:text="@string/godina_recomm"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.54"
+            app:layout_constraintHorizontal_bias="0.775"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.268" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="275dp"
+            android:layout_height="222dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="254dp"
+            android:layout_marginEnd="84dp"
+            android:layout_marginRight="84dp"
+            android:layout_marginBottom="255dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/spotify_logo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

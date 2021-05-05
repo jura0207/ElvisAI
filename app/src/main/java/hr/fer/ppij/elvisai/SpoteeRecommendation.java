@@ -7,8 +7,27 @@ public class SpoteeRecommendation {
     String external_url;
     String album_name;
     String album_id;
+    String name;
+    String release_date;
     List<SpoteeArtist> artists;
     String cover_art_link;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getRelease_date() {
+        return release_date;
+    }
+
+    public void setRelease_date(String release_date) {
+        this.release_date = release_date;
+    }
+
 
     public String getTrack_id() {
         return track_id;
@@ -50,18 +69,6 @@ public class SpoteeRecommendation {
         this.artists = artists;
     }
 
-    @Override
-    public String toString() {
-        return "SpoteeRecommendation{" +
-                "track_id='" + track_id + '\'' +
-                ", external_url='" + external_url + '\'' +
-                ", album_name='" + album_name + '\'' +
-                ", album_id='" + album_id + '\'' +
-                ", artists=" + artists +
-                ", cover_art_link='" + cover_art_link + '\'' +
-                '}';
-    }
-
     public String getCover_art_link() {
         return cover_art_link;
     }
@@ -69,4 +76,19 @@ public class SpoteeRecommendation {
     public void setCover_art_link(String cover_art_link) {
         this.cover_art_link = cover_art_link;
     }
+
+    @Override
+    public String toString() {
+        return "SpoteeRecommendation{" +
+                "track_id='" + track_id + '\'' +
+                ", external_url='" + external_url + '\'' +
+                ", album_name='" + album_name + '\'' +
+                ", album_id='" + album_id + '\'' +
+                ", name='" + name + '\'' +
+                ", release_date='" + release_date + '\'' +
+                ", artists=" + artists +
+                ", cover_art_link='" + cover_art_link + '\'' +
+                '}';
+    }
+
 }
