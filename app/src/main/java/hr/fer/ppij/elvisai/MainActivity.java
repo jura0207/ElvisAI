@@ -65,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void thumbsUp(View view) {
-        //This happens when you try to open spotify link
+        //Thumbs up button
     }
 
     public void thumbsDown(View view) {
-        //This happens when you try to open spotify link
+        //Thumbs down button
     }
 
     @Override
