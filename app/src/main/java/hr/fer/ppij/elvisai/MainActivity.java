@@ -64,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
         //Who the hell uses Deezer??
     }
 
+    public void thumbsUp(View view) {
+        //This happens when you try to open spotify link
+    }
+
+    public void thumbsDown(View view) {
+        //This happens when you try to open spotify link
+    }
+
     @Override
     public void onBackPressed(){
         if(activity_main_flag==0){

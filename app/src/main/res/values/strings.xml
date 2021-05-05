@@ -19,4 +19,6 @@
     <string name="youtube_link">Youtube link</string>
     <string name="deezer_link">Deezer link</string>
     <string name="profile_calib">Napravi profil</string>
+    <string name="thumbsupbutton">Thumbs Up Button</string>
+    <string name="thumbsdownbutton">Thumbs Down Button</string>
 </resources>
