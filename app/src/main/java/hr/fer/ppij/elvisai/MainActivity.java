@@ -72,6 +72,10 @@ public class MainActivity extends AppCompatActivity {
         //Thumbs down button
     }
 
+    public void playButton(View view) {
+        //Thumbs down button
+    }
+
     @Override
     public void onBackPressed(){
         if(activity_main_flag==0){
