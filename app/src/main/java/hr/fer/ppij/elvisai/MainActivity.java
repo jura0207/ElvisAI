@@ -46,24 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void getRecommendations() throws IOException {
-        Spotee spotee = new Spotee();
-        //dummy example -- it can be used for #disp
-        Map<String,Object> _parameters = new HashMap<String,Object>();
-        //TODO:add whole logic here
-        //instead of
-        _parameters.put("seed_artists", new String[]{"4NHQUGzhtTLFvgF5SZesLK", "0yujOFSHf3DlwirE8dsGuG"});
-        _parameters.put("seed_tracks","0c6xIDDpzE81m2q797ordA");
-        _parameters.put("min_energy",0.4);
-        _parameters.put("min_popularity",50);
-        //this
-        comends = spotee.getRecommendations(_parameters);
-        System.out.println(selectedGenres);
-        System.out.println(selectedEmotion);
-        setContentView(R.layout.song_recomm_main);
 
-//        for (SpoteeRecommendation spotii : comends) System.out.println(spotii);
-    }
 
     public void findNewSong(View view) throws IOException {
         TextView songNameView = (TextView)findViewById(R.id.textView13);
@@ -73,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView albumImageView = (ImageView)findViewById(R.id.imageView2);
         if (comends.isEmpty())
             //TODO: this should be replaced as following method will be removed
-            getRecommendations();
+            recommend(view);
         current = comends.get(0);
         songNameView.setText(current.getName());
         songArtistView.setText(current.getArtists().get(0).getArtist_name());
@@ -114,8 +97,28 @@ public class MainActivity extends AppCompatActivity {
     /**********************************************************************************************/
 
     /******************** genre_picker onClickActions *********************************************/
-    public void recommend(View view){
-        System.out.println("Go to recommend bitch");
+    private void getRecommendations() throws IOException {
+        Spotee spotee = new Spotee();
+        //dummy example -- it can be used for #disp
+        Map<String,Object> _parameters = new HashMap<String,Object>();
+        //TODO:add whole logic here
+        //instead of
+        _parameters.put("seed_artists", new String[]{"4NHQUGzhtTLFvgF5SZesLK", "0yujOFSHf3DlwirE8dsGuG"});
+        _parameters.put("seed_tracks","0c6xIDDpzE81m2q797ordA");
+        _parameters.put("min_energy",0.4);
+        _parameters.put("min_popularity",50);
+        //this
+        comends = spotee.getRecommendations(_parameters);
+        System.out.println(selectedGenres);
+        System.out.println(selectedEmotion);
+        setContentView(R.layout.song_recomm_main);
+
+//        for (SpoteeRecommendation spotii : comends) System.out.println(spotii);
+    }
+    public void recommend(View view) throws IOException {
+        Spotee spotee = new Spotee();
+        Map<String,Object> _parameters = new HashMap<String,Object>();
+
         Map<String,Float> emotionParams = selectedEmotion.getEmotionParameters();
 
         //ideally returns String[] of selected genres, TODO: TEST
@@ -124,6 +127,17 @@ public class MainActivity extends AppCompatActivity {
             genreParameters[i] = selectedGenres.get(i).getValue();
         }
 
+        _parameters.put("seed_genres", genreParameters);
+        if (emotionParams.get("danceability") != null)
+            _parameters.put("target_danceability", emotionParams.get("danceability"));
+        if (emotionParams.get("energy") != null)
+            _parameters.put("target_energy", emotionParams.get("energy"));
+        if (emotionParams.get("instrumentalness") != null)
+            _parameters.put("target_instrumentalness", emotionParams.get("instrumentalness"));
+        if (emotionParams.get("tempo") != null)
+            _parameters.put("target_tempo", emotionParams.get("tempo"));
+
+        comends = spotee.getRecommendations(_parameters);
         // At this point all the parameters should be ready
         /*
             TODO: Create 'parameters' Map as seen seen in 'getRecommendations()'
@@ -131,69 +145,69 @@ public class MainActivity extends AppCompatActivity {
             TODO: Delete 'getRecommendations()'
          */
 
-
         setContentView(R.layout.song_recomm_main);
+        findNewSong(view);
 
     }
     // Obviously dumb way to do this, but no time and impossible to break
-    public void rockButtonAction(View view){
+    public void rockButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.ROCK);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void classicalButtonAction(View view){
+    public void classicalButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.CLASSICAL);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void popButtonAction(View view){
+    public void popButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.POP);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void danceButtonAction(View view){
+    public void danceButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.DANCE);
         if (selectedGenres.size() == 5) recommend(view);
     }
     // not named in the same manner
-    public void chillGenreButtonAction(View view){
+    public void chillGenreButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.CHILL);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void metalButtonAction(View view){
+    public void metalButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.METAL);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void reggaeButtonAction(View view){
+    public void reggaeButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.REGGAE);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void rnbButtonAction(View view){
+    public void rnbButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.RNB);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void bluesButtonAction(View view){
+    public void bluesButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.BLUES);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void jazzButtonAction(View view){
+    public void jazzButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.JAZZ);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void countryButtonAction(View view){
+    public void countryButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.COUNTRY);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void folkButtonAction(View view){
+    public void folkButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.FOLK);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void punkButtonAction(View view){
+    public void punkButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.PUNK);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void rapButtonAction(View view){
+    public void rapButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.RAP);
         if (selectedGenres.size() == 5) recommend(view);
     }
-    public void houseButtonAction(View view){
+    public void houseButtonAction(View view) throws IOException {
         selectedGenres.add(Genres.HOUSE);
         if (selectedGenres.size() == 5) recommend(view);
     }
