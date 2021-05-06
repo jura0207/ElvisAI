@@ -97,28 +97,10 @@ public class MainActivity extends AppCompatActivity {
     /**********************************************************************************************/
 
     /******************** genre_picker onClickActions *********************************************/
-    private void getRecommendations() throws IOException {
-        Spotee spotee = new Spotee();
-        //dummy example -- it can be used for #disp
-        Map<String,Object> _parameters = new HashMap<String,Object>();
-        //TODO:add whole logic here
-        //instead of
-        _parameters.put("seed_artists", new String[]{"4NHQUGzhtTLFvgF5SZesLK", "0yujOFSHf3DlwirE8dsGuG"});
-        _parameters.put("seed_tracks","0c6xIDDpzE81m2q797ordA");
-        _parameters.put("min_energy",0.4);
-        _parameters.put("min_popularity",50);
-        //this
-        comends = spotee.getRecommendations(_parameters);
-        System.out.println(selectedGenres);
-        System.out.println(selectedEmotion);
-        setContentView(R.layout.song_recomm_main);
 
-//        for (SpoteeRecommendation spotii : comends) System.out.println(spotii);
-    }
     public void recommend(View view) throws IOException {
         Spotee spotee = new Spotee();
         Map<String,Object> _parameters = new HashMap<String,Object>();
-
         Map<String,Float> emotionParams = selectedEmotion.getEmotionParameters();
 
         //ideally returns String[] of selected genres, TODO: TEST
@@ -138,12 +120,6 @@ public class MainActivity extends AppCompatActivity {
             _parameters.put("target_tempo", emotionParams.get("tempo"));
 
         comends = spotee.getRecommendations(_parameters);
-        // At this point all the parameters should be ready
-        /*
-            TODO: Create 'parameters' Map as seen seen in 'getRecommendations()'
-            TODO: Feed it into 'spotee.getRecommendations(_parameters)' (init spotee?)
-            TODO: Delete 'getRecommendations()'
-         */
 
         setContentView(R.layout.song_recomm_main);
         findNewSong(view);
