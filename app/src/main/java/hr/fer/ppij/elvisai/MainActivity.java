@@ -24,6 +24,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     static int activity_main_flag;
     static SpoteeRecommendation current;
+    static Emotions emotion_picked;
     static List<SpoteeRecommendation> comends;
 
     @Override
@@ -39,10 +40,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void changelayoutfindsong(View view) throws IOException {
-        setContentView(R.layout.song_recomm_main);
+        //forwarding people to emotion_picker
+        setContentView(R.layout.emotion_picker);
         activity_main_flag = 0;
+        System.out.println("Initiate emotion_picker");
         getRecommendations();
-        findNewSong(view);
+//        findNewSong(view);
     }
 
     public void changelayoutprofilecalib(View view) {
@@ -80,6 +83,32 @@ public class MainActivity extends AppCompatActivity {
         albumImageView.setImageBitmap(bmp);
         comends.remove(0);
         //This happens when you try to find new songs
+    }
+    //emotion_picker on_click methods
+    public void happyButtonAction(View view){
+        emotion_picked = Emotions.HAPPY;
+        setContentView(R.layout.genre_picker);
+
+    }
+    public void sadButtonAction(View view){
+        emotion_picked = Emotions.SAD;
+        setContentView(R.layout.genre_picker);
+    }
+    public void chillButtonAction(View view){
+        emotion_picked = Emotions.CHILL;
+        setContentView(R.layout.genre_picker);
+    }
+    public void pumpedButtonAction(View view){
+        emotion_picked = Emotions.PUMPED;
+        setContentView(R.layout.genre_picker);
+    }
+    public void angryButtonAction(View view){
+        emotion_picked = Emotions.ANGRY;
+        setContentView(R.layout.genre_picker);
+    }
+    public void tiredButtonAction(View view){
+        emotion_picked = Emotions.TIRED;
+        setContentView(R.layout.genre_picker);
     }
 
     public void spotifyRedirect(View view) {

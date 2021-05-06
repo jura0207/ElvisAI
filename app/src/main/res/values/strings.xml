@@ -21,4 +21,12 @@
     <string name="profile_calib">Napravi profil</string>
     <string name="thumbsupbutton">Thumbs Up Button</string>
     <string name="thumbsdownbutton">Thumbs Down Button</string>
+    <string name="sretno_str">sretno</string>
+    <string name="sad">tužno</string>
+    <string name="chill">Opušteno</string>
+    <string name="pumped">nabrijano</string>
+    <string name="angry">ljuto</string>
+    <string name="tired">umorno</string>
+    <string name="howdoyoufeel">Kako se \nosjećaš?</string>
+    <string name="howdoyoufeelstr">Kako se osjećaš?</string>
 </resources>
