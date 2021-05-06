@@ -19,7 +19,12 @@ public enum Genres {
 
     public final String value;
 
-    private Genres(String value) {
+    public String getValue() {
+        return value;
+    }
+
+
+    Genres(String value) {
         this.value = value;
     }
 }
