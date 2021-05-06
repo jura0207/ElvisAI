@@ -6,178 +6,229 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button17"
+        android:id="@+id/classical_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fadingEdge="horizontal|vertical"
+        android:onClick="classicalButtonAction"
+        android:text="Classical"
+        app:layout_constraintEnd_toStartOf="@+id/pop_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/rock_btn"
+        app:layout_constraintTop_toBottomOf="@+id/how_ru_feeling_text_view" />
+
+    <Button
+        android:id="@+id/punk_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button14"
+        android:onClick="punkButtonAction"
+        android:text="Punk"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rap_btn"
+        app:layout_constraintEnd_toStartOf="@+id/rnb_btn"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="586dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/jazz_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/angry_btn"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="517dp" />
+        android:onClick="jazzButtonAction"
+        android:text="Jazz"
+        app:layout_constraintBaseline_toBaselineOf="@+id/country_btn"
+        app:layout_constraintEnd_toStartOf="@+id/chill_btn"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/folk_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
+        android:onClick="folkButtonAction"
+        android:text="Folk"
+        app:layout_constraintBaseline_toBaselineOf="@+id/country_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/angry_btn"
-        tools:layout_editor_absoluteY="517dp" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button14"
-        tools:layout_editor_absoluteY="586dp" />
-
-    <Button
-        android:id="@+id/button16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button13"
         app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toEndOf="@+id/button12"
-        tools:layout_editor_absoluteY="586dp" />
+        app:layout_constraintStart_toEndOf="@+id/chill_btn" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/house_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toEndOf="@+id/pumped_btn"
-        tools:layout_editor_absoluteY="517dp" />
+        android:onClick="houseButtonAction"
+        android:text="House"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rap_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rnb_btn" />
 
     <Button
-        android:id="@+id/happy_btn"
+        android:id="@+id/rap_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fadingEdge="horizontal|vertical"
+        android:onClick="rapButtonAction"
+        android:text="Rap"
+        app:layout_constraintEnd_toStartOf="@+id/blues_btn"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toEndOf="@+id/reggae_btn"
+        app:layout_constraintTop_toBottomOf="@+id/country_btn" />
+
+    <Button
+        android:id="@+id/country_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fadingEdge="horizontal|vertical"
+        android:onClick="countryButtonAction"
+        android:text="Country"
+        app:layout_constraintEnd_toStartOf="@+id/metal_btn"
+        app:layout_constraintStart_toEndOf="@+id/dance_btn"
+        app:layout_constraintTop_toBottomOf="@+id/rnb_btn" />
+
+    <Button
+        android:id="@+id/rock_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/sad_btn"
+        android:onClick="rockButtonAction"
+        android:text="Rock"
+        app:layout_constraintBaseline_toBaselineOf="@+id/classical_btn"
+        app:layout_constraintEnd_toStartOf="@+id/classical_btn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/blues_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
+        android:onClick="bluesButtonAction"
+        android:text="Blues"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rnb_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button14"
-        tools:layout_editor_absoluteY="445dp" />
+        app:layout_constraintStart_toEndOf="@+id/rnb_btn" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/rnb_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button13"
+        android:onClick="rnbButtonAction"
+        android:text="RnB"
+        app:layout_constraintEnd_toStartOf="@+id/blues_btn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button12"
-        tools:layout_editor_absoluteY="445dp" />
-
-    <Button
-        android:id="@+id/angry_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button10"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/pumped_btn"
-        tools:layout_editor_absoluteY="376dp" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/angry_btn"
-        tools:layout_editor_absoluteY="376dp" />
-
-    <Button
-        android:id="@+id/pumped_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/angry_btn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="376dp" />
+        app:layout_constraintStart_toEndOf="@+id/reggae_btn"
+        app:layout_constraintTop_toBottomOf="@+id/chill_btn" />
 
     <Button
         android:id="@+id/chill_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
+        android:onClick="chillGenreButtonAction"
+        android:text="Chill"
+        app:layout_constraintEnd_toStartOf="@+id/metal_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/dance_btn"
+        app:layout_constraintTop_toBottomOf="@+id/classical_btn" />
+
+    <Button
+        android:id="@+id/metal_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fadingEdge="horizontal|vertical"
+        android:onClick="metalButtonAction"
+        android:text="Metal"
+        app:layout_constraintBaseline_toBaselineOf="@+id/chill_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sad_btn"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintStart_toEndOf="@+id/chill_btn" />
 
     <Button
-        android:id="@+id/sad_btn"
+        android:id="@+id/dance_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
+        android:onClick="danceButtonAction"
+        android:text="Dance"
+        app:layout_constraintBaseline_toBaselineOf="@+id/chill_btn"
         app:layout_constraintEnd_toStartOf="@+id/chill_btn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/happy_btn"
-        tools:layout_editor_absoluteY="306dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/pop_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fadingEdge="horizontal|vertical"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button14"
+        android:onClick="popButtonAction"
+        android:text="Pop"
+        app:layout_constraintBaseline_toBaselineOf="@+id/classical_btn"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="445dp" />
+        app:layout_constraintStart_toEndOf="@+id/classical_btn" />
+
+    <Button
+        android:id="@+id/emotion_continue_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="237dp"
+        android:layout_marginLeft="237dp"
+        android:layout_marginTop="599dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
+        android:layout_marginBottom="138dp"
+        android:onClick="recommend"
+        android:text="Pronađi"
+        app:layout_constraintBottom_toBottomOf="@id/house_btn"
+        app:layout_constraintEnd_toEndOf="@id/house_btn"
+        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintStart_toStartOf="@id/punk_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.009" />
+
+    <Button
+        android:id="@+id/reggae_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fadingEdge="horizontal|vertical"
+        android:onClick="reggaeButtonAction"
+        android:text="Reggae"
+        app:layout_constraintBaseline_toBaselineOf="@+id/rnb_btn"
+        app:layout_constraintEnd_toStartOf="@+id/rnb_btn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/how_ru_feeling_text_view"
         android:layout_width="310dp"
         android:layout_height="186dp"
+        android:layout_marginTop="44dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Koje \nžanrove voliš?"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="25dp" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="82dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="192dp"
+        android:gravity="center"
+        android:text="5 max."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

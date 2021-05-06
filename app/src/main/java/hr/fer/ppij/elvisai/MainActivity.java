@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     static SpoteeRecommendation current;
     static Emotions emotion_picked;
     static List<SpoteeRecommendation> comends;
-
+    static List<Genres> selected_genres;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,35 +35,37 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        selected_genres = new ArrayList<>();
         setContentView(R.layout.activity_main);
 
         activity_main_flag = 1;
     }
 
-    public void changelayoutfindsong(View view) throws IOException {
+    public void landingContinueAction(View view) throws IOException {
         //forwarding people to emotion_picker
         setContentView(R.layout.emotion_picker);
         activity_main_flag = 0;
-        System.out.println("Initiate emotion_picker");
-        getRecommendations();
-//        findNewSong(view);
     }
 
-    public void changelayoutprofilecalib(View view) {
-        setContentView(R.layout.song_calib);
-        activity_main_flag = 0;
-    }
+
 
     private void getRecommendations() throws IOException {
         Spotee spotee = new Spotee();
         //dummy example -- it can be used for #disp
         Map<String,Object> _parameters = new HashMap<String,Object>();
+        //TODO:add whole logic here
+        //instead of
         _parameters.put("seed_artists", new String[]{"4NHQUGzhtTLFvgF5SZesLK", "0yujOFSHf3DlwirE8dsGuG"});
         _parameters.put("seed_tracks","0c6xIDDpzE81m2q797ordA");
         _parameters.put("min_energy",0.4);
         _parameters.put("min_popularity",50);
+        //this
         comends = spotee.getRecommendations(_parameters);
-        for (SpoteeRecommendation spotii : comends) System.out.println(spotii);
+        System.out.println(selected_genres);
+        System.out.println(emotion_picked);
+        setContentView(R.layout.song_recomm_main);
+
+//        for (SpoteeRecommendation spotii : comends) System.out.println(spotii);
     }
 
     public void findNewSong(View view) throws IOException {
@@ -84,11 +87,11 @@ public class MainActivity extends AppCompatActivity {
         comends.remove(0);
         //This happens when you try to find new songs
     }
-    //emotion_picker on_click methods
+
+    /************************ emotion_picker onClickActions ***************************************/
     public void happyButtonAction(View view){
         emotion_picked = Emotions.HAPPY;
         setContentView(R.layout.genre_picker);
-
     }
     public void sadButtonAction(View view){
         emotion_picked = Emotions.SAD;
@@ -110,6 +113,76 @@ public class MainActivity extends AppCompatActivity {
         emotion_picked = Emotions.TIRED;
         setContentView(R.layout.genre_picker);
     }
+    /**********************************************************************************************/
+    /******************** genre_picker onClickActions *********************************************/
+    public void recommend(View view){
+        System.out.println("Go to recommend bitch");
+        //        setContentView(R.layout.genre_picker);
+
+    }
+    // Obviously dumb way to do this, but no time and impossible to break
+    public void rockButtonAction(View view){
+        selected_genres.add(Genres.ROCK);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void classicalButtonAction(View view){
+        selected_genres.add(Genres.CLASSICAL);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void popButtonAction(View view){
+        selected_genres.add(Genres.POP);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void danceButtonAction(View view){
+        selected_genres.add(Genres.DANCE);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    // not named in the same manner
+    public void chillGenreButtonAction(View view){
+        selected_genres.add(Genres.CHILL);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void metalButtonAction(View view){
+        selected_genres.add(Genres.METAL);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void reggaeButtonAction(View view){
+        selected_genres.add(Genres.REGGAE);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void rnbButtonAction(View view){
+        selected_genres.add(Genres.RNB);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void bluesButtonAction(View view){
+        selected_genres.add(Genres.BLUES);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void jazzButtonAction(View view){
+        selected_genres.add(Genres.JAZZ);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void countryButtonAction(View view){
+        selected_genres.add(Genres.COUNTRY);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void folkButtonAction(View view){
+        selected_genres.add(Genres.FOLK);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void punkButtonAction(View view){
+        selected_genres.add(Genres.PUNK);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void rapButtonAction(View view){
+        selected_genres.add(Genres.RAP);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    public void houseButtonAction(View view){
+        selected_genres.add(Genres.HOUSE);
+        if (selected_genres.size() == 5) recommend(view);
+    }
+    /**********************************************************************************************/
 
     public void spotifyRedirect(View view) {
         Intent intent = new Intent();

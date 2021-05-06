@@ -6,21 +6,21 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/happy_btn"
+        android:id="@+id/rock_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp"
         android:fadingEdge="horizontal|vertical"
         android:onClick="happyButtonAction"
         android:text="@string/sretno_str"
-        app:layout_constraintBottom_toTopOf="@+id/pumped_btn"
-        app:layout_constraintEnd_toStartOf="@+id/sad_btn"
+        app:layout_constraintBottom_toTopOf="@+id/dance_btn"
+        app:layout_constraintEnd_toStartOf="@+id/classical_btn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/how_ru_feeling_text_view" />
 
     <Button
-        android:id="@+id/pumped_btn"
+        android:id="@+id/dance_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="369dp"
@@ -28,21 +28,21 @@
         android:onClick="pumpedButtonAction"
         android:text="@string/pumped"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/angry_btn"
+        app:layout_constraintEnd_toStartOf="@+id/chill_btn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/angry_btn"
+        android:id="@+id/chill_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fadingEdge="horizontal|vertical"
         android:onClick="angryButtonAction"
         android:text="@string/angry"
-        app:layout_constraintBaseline_toBaselineOf="@+id/pumped_btn"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dance_btn"
         app:layout_constraintEnd_toStartOf="@+id/tired_btn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/pumped_btn" />
+        app:layout_constraintStart_toEndOf="@+id/dance_btn" />
 
     <Button
         android:id="@+id/tired_btn"
@@ -51,13 +51,13 @@
         android:fadingEdge="horizontal|vertical"
         android:onClick="tiredButtonAction"
         android:text="@string/tired"
-        app:layout_constraintBaseline_toBaselineOf="@+id/angry_btn"
+        app:layout_constraintBaseline_toBaselineOf="@+id/chill_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/angry_btn" />
+        app:layout_constraintStart_toEndOf="@+id/chill_btn" />
 
     <Button
-        android:id="@+id/chill_btn"
+        android:id="@+id/pop_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp"
@@ -67,20 +67,20 @@
         app:layout_constraintBottom_toTopOf="@+id/tired_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sad_btn" />
+        app:layout_constraintStart_toEndOf="@+id/classical_btn" />
 
     <Button
-        android:id="@+id/sad_btn"
+        android:id="@+id/classical_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp"
         android:fadingEdge="horizontal|vertical"
         android:onClick="sadButtonAction"
         android:text="@string/sad"
-        app:layout_constraintBottom_toTopOf="@+id/pumped_btn"
-        app:layout_constraintEnd_toStartOf="@+id/chill_btn"
+        app:layout_constraintBottom_toTopOf="@+id/dance_btn"
+        app:layout_constraintEnd_toStartOf="@+id/pop_btn"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/happy_btn" />
+        app:layout_constraintStart_toEndOf="@+id/rock_btn" />
 
     <TextView
         android:id="@+id/how_ru_feeling_text_view"
@@ -91,7 +91,7 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/howdoyoufeelstr"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/happy_btn"
+        app:layout_constraintBottom_toTopOf="@+id/rock_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
