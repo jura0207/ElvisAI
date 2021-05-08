@@ -1,4 +1,4 @@
-package hr.fer.ppij.elvisai;
+ package hr.fer.ppij.elvisai;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -201,6 +201,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
+        current = null;
+        selectedEmotion = null;
+        selectedGenres.clear();
         if(activity_main_flag==0){
             setContentView(R.layout.activity_main);
             activity_main_flag = 1;
