@@ -27,4 +27,8 @@ public class SpoteeArtist {
                 ", artist_name='" + artist_name + '\'' +
                 '}';
     }
+
+    public String getArtist(){
+        return artist_name;
+    }
 }
