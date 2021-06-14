@@ -241,14 +241,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void deezerRedirect(View view){
         try {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("deezer://www.deezer.com/search/"+current.getName()
+            /**Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("deezer://www.deezer.com/search/"+current.getName()
                     + "%20" + current.getArtists().get(0).getArtist_name()
-                    + "%20" + current.getAlbum_name()));
+                    + "%20" + current.getAlbum_name()));*/
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.deezer.com/search/"+current.getName()
+                    + "%20" + current.getArtists().get(0).getArtist_name()));
             startActivity(intent);
         } catch (Exception e) {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.deezer.com/search/"+current.getName()
-                    + "%20" + current.getArtists().get(0).getArtist_name()
-                    + "%20" + current.getAlbum_name()));
+                    + "%20" + current.getArtists().get(0).getArtist_name()));
             startActivity(intent);
         }
     }
