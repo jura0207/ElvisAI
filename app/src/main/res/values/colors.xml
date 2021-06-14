@@ -17,4 +17,5 @@
     <color name="colorRed">#E43328</color>
     <color name="buttonNormal">#8BC34A</color>
     <color name="buttonPressed">#435e23</color>
+    <color name="lightGreen">#ccfad2</color>
 </resources>
