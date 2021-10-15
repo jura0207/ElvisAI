@@ -9,8 +9,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     static SpoteeRecommendation current;
     static Emotions selectedEmotion;
     static List<Genres> selectedGenres;
+    static boolean engLanguage = false;
 
     static List<SpoteeRecommendation> comends;
     @Override
@@ -43,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         //forwarding people to emotion_picker
         setContentView(R.layout.emotion_picker);
         activity_main_flag = 0;
+        if (engLanguage == true){
+            setEngLanguage(1);
+        }
     }
 
 
@@ -73,26 +79,44 @@ public class MainActivity extends AppCompatActivity {
     public void happyButtonAction(View view){
         selectedEmotion = Emotions.HAPPY;
         setContentView(R.layout.genre_picker);
+        if (engLanguage == true){
+            setEngLanguage(2);
+        }
     }
     public void sadButtonAction(View view){
         selectedEmotion = Emotions.SAD;
         setContentView(R.layout.genre_picker);
+        if (engLanguage == true){
+            setEngLanguage(2);
+        }
     }
     public void chillButtonAction(View view){
         selectedEmotion = Emotions.CHILL;
         setContentView(R.layout.genre_picker);
+        if (engLanguage == true){
+            setEngLanguage(2);
+        }
     }
     public void pumpedButtonAction(View view){
         selectedEmotion = Emotions.PUMPED;
         setContentView(R.layout.genre_picker);
+        if (engLanguage == true){
+            setEngLanguage(2);
+        }
     }
     public void angryButtonAction(View view){
         selectedEmotion = Emotions.ANGRY;
         setContentView(R.layout.genre_picker);
+        if (engLanguage == true){
+            setEngLanguage(2);
+        }
     }
     public void tiredButtonAction(View view){
         selectedEmotion = Emotions.TIRED;
         setContentView(R.layout.genre_picker);
+        if (engLanguage == true){
+            setEngLanguage(2);
+        }
     }
     /**********************************************************************************************/
 
@@ -123,6 +147,9 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.song_recomm_main);
         findNewSong(view);
+        if (engLanguage == true){
+            setEngLanguage(3);
+        }
 
     }
     // Obviously dumb way to do this, but no time and impossible to break
@@ -198,6 +225,96 @@ public class MainActivity extends AppCompatActivity {
         //This happens when you try to open spotify link
     }
 
+    public void youtubeRedirect(View view) {
+        try {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("youtube://www.youtube.com/results?search_query=" + current.getName()
+                    + "+" + current.getArtists().get(0).getArtist_name()
+                    + "+" + current.getAlbum_name()));
+            startActivity(browserIntent);
+        } catch (Exception e) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=" + current.getName()
+                    + "+" + current.getArtists().get(0).getArtist_name()
+                    + "+" + current.getAlbum_name()));
+            startActivity(browserIntent);
+        }
+    }
+
+    public void deezerRedirect(View view){
+        try {
+            /**Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("deezer://www.deezer.com/search/"+current.getName()
+                    + "%20" + current.getArtists().get(0).getArtist_name()
+                    + "%20" + current.getAlbum_name()));*/
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.deezer.com/search/"+current.getName()
+                    + "%20" + current.getArtists().get(0).getArtist_name()));
+            startActivity(intent);
+        } catch (Exception e) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.deezer.com/search/"+current.getName()
+                    + "%20" + current.getArtists().get(0).getArtist_name()));
+            startActivity(intent);
+        }
+    }
+
+    public void changeLanguage(View view){
+        if (engLanguage == false){
+            setEngLanguage(0);
+            engLanguage = true;
+        } else{
+            setEngLanguage(-1);
+            engLanguage = false;
+        }
+
+    }
+
+    public void setEngLanguage(int viewNumber){
+        if (viewNumber == 0){
+            TextView welcomeTextView = (TextView)findViewById(R.id.welcome);
+            welcomeTextView.setText("Welcome to");
+            TextView musicWithoutTextView = (TextView)findViewById(R.id.textView2);
+            musicWithoutTextView.setText("Music without advertisment");
+            Button buttonFindSong = (Button)findViewById(R.id.button2);
+            buttonFindSong.setText("Find song");
+        } else if (viewNumber == 1){
+            TextView howRUTextView = (TextView)findViewById(R.id.how_ru_feeling_text_view);
+            howRUTextView.setText("How are you feeling?");
+            Button buttonHappy = (Button)findViewById(R.id.happy_btn);
+            buttonHappy.setText("Happy");
+            Button buttonSad = (Button)findViewById(R.id.sad_btn);
+            buttonSad.setText("Sad");
+            Button buttonRelaxed = (Button)findViewById(R.id.relaxed_btn);
+            buttonRelaxed.setText("Relaxed");
+            Button buttonPumpedUp = (Button)findViewById(R.id.pumpedUp_btn);
+            buttonPumpedUp.setText("Pumped up");
+            Button buttonAngry = (Button)findViewById(R.id.angry_btn);
+            buttonAngry.setText("Angry");
+            Button buttonTired = (Button)findViewById(R.id.tired_btn);
+            buttonTired.setText("Tired");
+        } else if (viewNumber == 2){
+            Button buttonContinue = (Button)findViewById(R.id.emotion_continue_btn);
+            buttonContinue.setText("Find");
+            TextView whichMusicGenreTextView = (TextView)findViewById(R.id.which_music_text_view);
+            whichMusicGenreTextView.setText("Which music genres do you like?");
+        } else if (viewNumber == 3){
+            TextView songNameTextView = (TextView)findViewById(R.id.textView9);
+            songNameTextView.setText("Song name:");
+            TextView artistNameTextView = (TextView)findViewById(R.id.textView10);
+            artistNameTextView.setText("Artist:");
+            TextView albumNameTextView = (TextView)findViewById(R.id.textView11);
+            albumNameTextView.setText("Album:");
+            TextView yearTextView = (TextView)findViewById(R.id.textView12);
+            yearTextView.setText("Year:");
+            TextView findNewSongTextView = (TextView)findViewById(R.id.textView7);
+            findNewSongTextView.setText("Find new song:");
+        } else if (viewNumber == -1){
+            TextView welcomeTextView = (TextView)findViewById(R.id.welcome);
+            welcomeTextView.setText("Dobrodošli u");
+            TextView musicWithoutTextView = (TextView)findViewById(R.id.textView2);
+            musicWithoutTextView.setText("Glazba bez promidžbe");
+            Button buttonFindSong = (Button)findViewById(R.id.button2);
+            buttonFindSong.setText("Pronađi pjesmu");
+        }
+
+    }
+
 
     @Override
     public void onBackPressed(){
@@ -207,6 +324,12 @@ public class MainActivity extends AppCompatActivity {
         if(activity_main_flag==0){
             setContentView(R.layout.activity_main);
             activity_main_flag = 1;
+            if (engLanguage == true){
+                ToggleButton toggleButton = (ToggleButton)findViewById(R.id.toggleButton);
+                toggleButton.performClick();
+                setEngLanguage(0);
+                engLanguage=true;
+            }
         } else{
             finish();
         }
